@@ -25,3 +25,12 @@ interviews_total_meals <- interviews %>%
   select(village, total_meals)
 
 interviews_total_meals
+
+interviews %>%
+  group_by(village) %>%
+  summarize(
+    mean_no_membrs = mean(no_membrs),
+    min_no_membrs = min(no_membrs),
+    max_no_membrs = max(no_membrs),
+    n = n()
+  )
